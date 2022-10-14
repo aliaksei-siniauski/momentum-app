@@ -1,0 +1,25 @@
+.change-quote {
+  margin: 0.3rem;
+  background-image: url("/src/svg/reload.svg");
+  @extend %icon-block;
+  &:hover {
+    @extend %icon-hover;
+  }
+  &:active {
+    @extend %icon-active;
+  }
+}
+
+.quote-block {
+  padding-top: 1rem;
+  width: 40vw;
+  font-size: 1.8rem;
+}
+
+.quote {
+  min-height: 32px;
+}
+
+.author {
+  min-height: 20px;
+}

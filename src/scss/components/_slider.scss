@@ -1,0 +1,22 @@
+.slider-icon {
+  position: absolute;
+  top: 50%;
+  margin-top: -1.6rem;
+  @extend %icon-block;
+  &:hover {
+    @extend %icon-hover;
+  }
+  &:active {
+    @extend %icon-active;
+  }
+}
+
+.slide-prev {
+  left: 20px;
+  background-image: url("/src/svg/slider-prev.svg");
+}
+
+.slide-next {
+  right: 20px;
+  background-image: url("/src/svg/slider-next.svg");
+}

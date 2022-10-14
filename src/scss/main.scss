@@ -1,0 +1,27 @@
+/* Abstracts */
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/extend";
+
+/* Vendors */
+
+/* Base */
+
+@import "base/reset";
+@import "base/base";
+@import "base/font";
+
+/* Layout  */
+
+@import "layout/header";
+@import "layout/main";
+@import "layout/footer";
+
+/* Components */
+
+@import "components/player";
+@import "components/weather";
+@import "components/slider";
+@import "components/greeting";
+@import "components/quotes";
+@import "components/setting";
