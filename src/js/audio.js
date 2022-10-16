@@ -1,24 +1,24 @@
 export { playList, buildPlayList, stylePlayItem };
 const playList = [
   {
-    title: "Aqua Caelestic",
-    src: "../src/sounds/Aqua Caelestic.mp3",
-    duration: "00:58",
+    title: "Game Of Thrones",
+    src: "../src/sounds/Game Of Thrones.mp3",
+    duration: "00:25",
   },
   {
-    title: "River Flows In You",
-    src: "../src/sounds/River Flows In You.mp3",
-    duration: "01:50",
+    title: "Lord Of The Rings ",
+    src: "../src/sounds/Lord Of The Rings.mp3",
+    duration: "00:35",
   },
   {
-    title: "Ennio Morricone",
-    src: "../src/sounds/Ennio Morricone.mp3",
-    duration: "02:00",
+    title: "Peaky Blinders",
+    src: "../src/sounds/Peaky Blinders.mp3",
+    duration: "00:35",
   },
   {
-    title: "Summer Wind",
-    src: "../src/sounds/Summer Wind.mp3",
-    duration: "01:50",
+    title: "Sherlock Holmes",
+    src: "../src/sounds/Sherlock Holmes.mp3",
+    duration: "00:35",
   },
 ];
 
@@ -27,6 +27,7 @@ const playPrevButton = document.querySelector(".play-prev");
 const playNextButton = document.querySelector(".play-next");
 
 let playNum = 0;
+let currentTime = 0;
 let isPlay = false;
 
 const audio = new Audio();
@@ -45,22 +46,26 @@ const buildPlayList = () => {
 };
 buildPlayList();
 
-const stylePlayItem = (numSong) => {
+const stylePlayItem = (playNum) => {
   const playItems = document.querySelectorAll(".play-item");
   playItems.forEach((item) => {
     item.classList.remove("item-active");
-    if (item.innerHTML === playList[numSong].title) {
+    if (item.innerHTML === playList[playNum].title) {
       item.classList.add("item-active");
     }
   });
 };
 
+const showSongTitle = () => {
+  const songTitle = document.querySelector(".track-name .track-name__item");
+  songTitle.textContent = playList[playNum].title;
+};
+
 const playAudio = () => {
   audio.currentTime = 0;
   audio.src = playList[playNum].src;
-
   stylePlayItem(playNum);
-
+  showSongTitle();
   if (!isPlay) {
     audio.play();
     isPlay = true;
@@ -98,47 +103,47 @@ const playPrev = () => {
   }
   playAudio();
 };
-
 playPrevButton.addEventListener("click", playPrev);
 
-/*Timeliner */
+//click on timeline to skip around
 
 const timeline = document.querySelector(".timeline");
-const progressBar = document.querySelector(".progress-bar");
-const currentTime = document.querySelector(".current-time");
-const durationtime = document.querySelector(".total-duration");
-function formatTime(seconds) {
-  let min = Math.floor(seconds / 60);
-  let sec = Math.floor(seconds - min * 60);
-  if (sec < 10) {
-    sec = `0${sec}`;
-  }
-  return `${min}:${sec}`;
-}
-/* Work with Progres bar */
-
-const handleProgressBar = (el) => {
-  const durationProgress = el.target.duration;
-  const currentTimeProgressBar = el.target.currentTime;
-  const progressBarPercent = (currentTimeProgressBar / durationProgress) * 100;
-  progressBar.style.width = `${progressBarPercent}%`;
-};
-audio.addEventListener("timeupdate", handleProgressBar);
-
 const rewindTimline = (el) => {
   const timlineWidth = el.target.offsetWidth;
   const clickOffSetX = el.offsetX;
   const durationAudioTrek = audio.duration;
-
   audio.currentTime = (clickOffSetX / timlineWidth) * durationAudioTrek;
 };
-
 timeline.addEventListener("click", rewindTimline);
 
-/*Volume  */
+//check audio percentage and update time accordingly
+
+const getTimeCodeFromNum = (currentTime) => {
+  let currentSeconds = parseInt(currentTime);
+  let currentMinutes = parseInt(currentSeconds / 60);
+  currentSeconds -= currentMinutes * 60;
+  const currentHours = parseInt(currentMinutes / 60);
+  currentMinutes -= currentHours * 60;
+
+  if (currentHours === 0)
+    return `${currentMinutes}:${String(currentSeconds % 60).padStart(2, 0)}`;
+  return `${String(currentHours).padStart(2, 0)}:${currentMinutes}:${String(
+    currentSeconds % 60
+  ).padStart(2, 0)}`;
+};
+
+setInterval(() => {
+  const progressBar = document.querySelector(".progress-bar");
+  progressBar.style.width = (audio.currentTime / audio.duration) * 100 + "%";
+  document.querySelector(".current-time").textContent = getTimeCodeFromNum(
+    audio.currentTime
+  );
+  getTimeCodeFromNum(currentTime);
+}, 500);
+
+//click volume slider to change volume
 
 const volumeIcon = document.querySelector(".volume-icon");
-
 volumeIcon.addEventListener("click", () => {
   audio.muted = !audio.muted;
   if (!audio.muted) {
@@ -149,7 +154,6 @@ volumeIcon.addEventListener("click", () => {
 });
 
 const volumeRange = document.querySelector(".volume-range");
-
 volumeRange.addEventListener("input", () => {
   audio.volume = Math.trunc(volumeRange.value) / 100;
   if (volumeRange.value == 0) {

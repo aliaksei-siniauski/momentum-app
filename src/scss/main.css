@@ -177,7 +177,7 @@ body {
 .logo {
   width: 30%;
   display: block;
-  padding-top: 30px;
+  padding-top: 2rem;
 }
 
 .logo-img {
@@ -295,6 +295,10 @@ body {
 }
 
 .duration-time {
+  padding-left: 0.5rem;
+}
+
+.total-time {
   padding-left: 0.5rem;
 }
 
@@ -484,7 +488,7 @@ body {
 }
 .quote-block {
   padding-top: 1rem;
-  width: 40vw;
+  width: 73vw;
   font-size: 1.8rem;
 }
 
@@ -519,7 +523,7 @@ body {
 }
 
 .setting-inner {
-  padding: 0.5rem;
+  padding: 0.1rem;
 }
 
 .user-block {
@@ -681,6 +685,11 @@ body {
 /* Focus */
 .checkbox-button.focused .checkbox-switch:before {
   box-shadow: inset 0px 0px 4px #ff5623;
+}
+
+.to-do-list {
+  position: absolute;
+  right: 10%;
 }
 
 /*# sourceMappingURL=main.css.map */
