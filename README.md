@@ -1,6 +1,6 @@
 # [Momentum app](https://rs-momentum-app.netlify.app/)
 
-![Momentum](https://snipboard.io/jPThBC.jpg)
+![Momentum](https://snipboard.io/iyHgkR.jpg)
 
 ## Project Description:
 
