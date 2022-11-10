@@ -14,3 +14,11 @@ import {
 } from "./js/greeting.js";
 import { getWeather, setCity } from "./js/weather.js";
 import { showSetting } from "./js/setting.js";
+import {
+  langEn,
+  langBy,
+  langRu,
+  lang,
+  getLocalStorageLang,
+  select,
+} from "./js/translate.js";

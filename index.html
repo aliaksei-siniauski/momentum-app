@@ -110,18 +110,20 @@
             </div>
             <!-- close user block -->
             <div class="setting-general">
-              <span class="setting-general__title">General Setting</span>
+              <span class="setting-general__title" data-i18="setGeneralSetting"
+                >General Setting</span
+              >
               <div class="setting-app">
                 <div class="setting-language">
-                  <p>Language</p>
-                  <select class="language-selected">
-                    <option value="En" selected="selected">English</option>
-                    <option value="By">Беларускі</option>
-                    <option value="Ru">Русский</option>
+                  <p data-i18="setLanguage">Language</p>
+                  <select id="language">
+                    <option value="en">English</option>
+                    <option value="by">Беларуская</option>
+                    <option value="ru">Рускі</option>
                   </select>
                 </div>
                 <div class="setting-image-source">
-                  <p>Image Source</p>
+                  <p data-i18="setImage">Image Source</p>
                   <select class="image-source-selected">
                     <option value="Github" selected="selected">Github</option>
                     <option value="Unsplash API">Unsplash API</option>
@@ -130,7 +132,7 @@
                 </div>
                 <!-- close image-source-block -->
                 <div class="image-tag show">
-                  <p class="tag-title">Image Tag</p>
+                  <p class="tag-title" data-i18="setImageTag">Image Tag</p>
                   <input
                     type="text"
                     class="set-tag"
@@ -142,9 +144,11 @@
             </div>
             <!-- setting-geniral -->
             <div class="setting-widgets">
-              <span class="setting-widgets__title">Widgets</span>
+              <span class="setting-widgets__title" data-i18="setWidget"
+                >Widgets</span
+              >
               <div class="widget-player">
-                <p class="widget-name">Audio player</p>
+                <p class="widget-name" data-i18="setAudio">Audio Player</p>
                 <label class="checkbox-button">
                   <input type="checkbox" checked />
                   <span class="checkbox-switch"></span>
@@ -152,42 +156,42 @@
               </div>
               <!-- close audio-player-block -->
               <div class="widget-weather">
-                <p class="widget-name">Weather</p>
+                <p class="widget-name" data-i18="setWeather">Weather</p>
                 <label class="checkbox-button">
                   <input type="checkbox" checked />
                   <span class="checkbox-switch"></span>
                 </label>
               </div>
               <div class="widget-time">
-                <p class="widget-name">Time</p>
+                <p class="widget-name" data-i18="setTime">Time</p>
                 <label class="checkbox-button">
                   <input type="checkbox" checked />
                   <span class="checkbox-switch"></span>
                 </label>
               </div>
               <div class="widget-date">
-                <p class="widget-name">Date</p>
+                <p class="widget-name" data-i18="setDate">Date</p>
                 <label class="checkbox-button">
                   <input type="checkbox" checked />
                   <span class="checkbox-switch"></span>
                 </label>
               </div>
               <div class="widget-greeting">
-                <p class="widget-name">Greeting</p>
+                <p class="widget-name" data-i18="setGreeting">Greeting</p>
                 <label class="checkbox-button">
                   <input type="checkbox" checked />
                   <span class="checkbox-switch"></span>
                 </label>
               </div>
               <div class="widget-quotes">
-                <p class="widget-name">Quotes</p>
+                <p class="widget-name" data-i18="setQuote">Quotes</p>
                 <label class="checkbox-button">
                   <input type="checkbox" checked />
                   <span class="checkbox-switch"></span>
                 </label>
               </div>
               <div class="widget-todo">
-                <p class="widget-name">Todo</p>
+                <p class="widget-name" data-i18="setTodo">Todo</p>
                 <label class="checkbox-button">
                   <input type="checkbox" checked />
                   <span class="checkbox-switch"></span>
@@ -202,7 +206,7 @@
       <!-- close setting -->
       <div class="setting-description">
         <div class="setting-icon"></div>
-        <p class="setting-title">Setting</p>
+        <p class="setting-title" data-i18="setTitle">Settings</p>
       </div>
       <div class="to-do-list">
         <h2>To Do List</h2>
