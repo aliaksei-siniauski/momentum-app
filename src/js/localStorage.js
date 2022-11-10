@@ -1,4 +1,5 @@
 export { setLocalStorage, getLocalStorage };
+import { langEn, langBy, langRu } from "./translate.js";
 
 const userName = document.querySelector(".name");
 const city = document.querySelector(".city");
