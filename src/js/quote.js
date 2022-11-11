@@ -1,4 +1,5 @@
 export { getQuotes, clickToChangeQuotes };
+import { lang, language } from "./translate.js";
 
 const quote = document.querySelector(".quote");
 const author = document.querySelector(".author");
@@ -11,8 +12,9 @@ const getRandomNum = (min, max) => {
 };
 
 async function getQuotes() {
-  const quotes = "/src/js/data.json";
-  const res = await fetch(quotes);
+  const quotes = "/src/js/quotes.json";
+  /*   const quotes = lang[language].quot;
+   */ const res = await fetch(quotes);
   const data = await res.json();
 
   let randomQuote = getRandomNum(0, data.length - 1);

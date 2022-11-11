@@ -1,4 +1,4 @@
-export { langEn, langBy, langRu, lang, getLocalStorageLang, selectLanguage };
+export { langEn, langBy, langRu, selectLanguage, lang, language, getTranslate };
 const lang = {
   en: {
     town: "Minsk",
@@ -15,7 +15,8 @@ const lang = {
     speedWindText: "SpeedWind ",
     errorText: "You not enter.",
     errorNotFoundText: "This city not found: ",
-    quotes: "js/EN-quotes.json",
+    quot: "/src/js/quotes.json",
+    todoList: "To Do List",
     setTitle: "Settings",
     setGeneralSetting: "General Setting",
     setLanguage: "Language",
@@ -47,7 +48,8 @@ const lang = {
     speedWindText: "Хуткасць ветру: ",
     errorText: "Вы нічога не ўвялі",
     errorNotFoundText: "Такі горад не знойдзены: ",
-    quotes: "js/By-quotes.json",
+    quot: "/src/js/quotesBy.json",
+    todoList: "Спіс Спраў",
     setTitle: "Налады",
     setGeneralSetting: "Агульныя налады",
     setLanguage: "Мова",
@@ -81,6 +83,7 @@ const lang = {
     errorText: "Вы ничего не ввели.",
     errorNotFoundText: "Такой город не найден: ",
     quotes: "js/RU-quotes.json",
+    todoList: "Список Дел",
     setTitle: "Настройки",
     setGeneralSetting: "Общие настройки",
     setLanguage: "Язык",
@@ -104,16 +107,15 @@ let language;
 const langEn = document.querySelector(".lang-en");
 const langBy = document.querySelector(".lang-by");
 const langRu = document.querySelector(".lang-ru");
+let selectLanguage = document.getElementById("language");
 
-const getTranslate = (language) => {
+function getTranslate(language) {
   const dataTranslate = document.querySelectorAll("[data-i18]");
   dataTranslate.forEach((el) => {
     let key = el.dataset.i18;
     el.textContent = lang[language][key];
   });
-};
-
-let selectLanguage = document.getElementById("language");
+}
 
 selectLanguage.addEventListener("change", () => {
   let selectLanguageOption =
@@ -128,11 +130,3 @@ selectLanguage.addEventListener("change", () => {
     getTranslate((language = "ru"));
   }
 });
-
-function getLocalStorageLang() {
-  if (localStorage.getItem("langStorage")) {
-    langKey = localStorage.getItem("langStorage");
-  }
-}
-
-getLocalStorageLang();
