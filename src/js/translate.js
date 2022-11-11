@@ -1,4 +1,4 @@
-export { langEn, langBy, langRu, lang, getLocalStorageLang, select };
+export { langEn, langBy, langRu, lang, getLocalStorageLang, selectLanguage };
 const lang = {
   en: {
     town: "Minsk",
@@ -113,17 +113,18 @@ const getTranslate = (language) => {
   });
 };
 
-let select = document.getElementById("language");
+let selectLanguage = document.getElementById("language");
 
-select.addEventListener("change", () => {
-  let option = select.options[select.selectedIndex];
-  if (option.value === "by") {
+selectLanguage.addEventListener("change", () => {
+  let selectLanguageOption =
+    selectLanguage.options[selectLanguage.selectedIndex];
+  if (selectLanguageOption.value === "by") {
     getTranslate((language = "by"));
   }
-  if (option.value === "en") {
+  if (selectLanguageOption.value === "en") {
     getTranslate((language = "en"));
   }
-  if (option.value === "ru") {
+  if (selectLanguageOption.value === "ru") {
     getTranslate((language = "ru"));
   }
 });

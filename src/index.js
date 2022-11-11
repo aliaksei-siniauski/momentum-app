@@ -20,5 +20,6 @@ import {
   langRu,
   lang,
   getLocalStorageLang,
-  select,
+  selectLanguage,
 } from "./js/translate.js";
+import { selectImageSource, imageTag } from "./js/imageSource.js";

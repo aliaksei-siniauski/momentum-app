@@ -8,6 +8,8 @@ export {
   clickSlidePrev,
   clickSlideNext,
   getLinkToImage,
+  greeting,
+  body,
 };
 
 const pageTime = document.querySelector(".time");
