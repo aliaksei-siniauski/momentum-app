@@ -167,6 +167,14 @@ body {
   padding: 1.2rem;
 }
 
+.time {
+  transition: visibility ease-in-out 0.6s;
+}
+
+.date {
+  transition: visibility ease-in-out 0.6s;
+}
+
 .footer {
   position: relative;
   width: 100%;
@@ -204,6 +212,7 @@ body {
   padding: 0.7rem;
   background-color: hsla(0deg, 0%, 22%, 0.8);
   border-radius: 1.5rem;
+  transition: visibility ease-in-out 0.6s;
 }
 
 .player-controls {
@@ -388,6 +397,7 @@ body {
   min-height: 180px;
   text-align: left;
   font-size: 1.5rem;
+  transition: visibility ease-in-out 0.6s;
 }
 
 .weather-error {
@@ -442,6 +452,7 @@ body {
   min-height: 48px;
   width: 100vw;
   font-size: 4rem;
+  transition: visibility ease-in-out 0.6s;
 }
 @media (max-width: 768px) {
   .greeting-container {
@@ -485,11 +496,13 @@ body {
 .change-quote {
   margin: 0.3rem;
   background-image: url("/src/svg/reload.svg");
+  transition: visibility ease-in-out 0.6s;
 }
 .quote-block {
   padding-top: 1rem;
   width: 73vw;
   font-size: 1.8rem;
+  transition: visibility ease-in-out 0.6s;
 }
 
 .quote {
@@ -690,6 +703,7 @@ body {
 .to-do-list {
   position: absolute;
   right: 10%;
+  transition: visibility ease-in-out 0.6s;
 }
 
 /*# sourceMappingURL=main.css.map */
