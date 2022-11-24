@@ -1,220 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="src/favicon.ico" />
-    <link rel="stylesheet" href="src/owfont-regular.css" />
-    <link rel="stylesheet" href="src/scss/main.css" />
-    <title>Momentum</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="player">
-        <div class="player-controls">
-          <button class="play-prev player-icon"></button>
-          <button class="play player-icon"></button>
-          <button class="play-next player-icon"></button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="src/favicon.ico" />
+  <link rel="stylesheet" href="src/owfont-regular.css" />
+  <link rel="stylesheet" href="src/scss/main.css" />
+  <title>Momentum</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="player-controls">
+        <button class="play-prev player-icon"></button>
+        <button class="play player-icon"></button>
+        <button class="play-next player-icon"></button>
+      </div>
+      <!-- close controls -->
+      <div class="progress">
+        <div class="track-name">
+          <span class="track-name__item">Game Of Thrones</span>
         </div>
-        <!-- close controls -->
-        <div class="progress">
-          <div class="track-name">
-            <span class="track-name__item">Game Of Thrones</span>
+        <div class="slider-timeline">
+          <div class="current-time">00:00</div>
+          <div class="timeline">
+            <div class="progress-bar"></div>
           </div>
-          <div class="slider-timeline">
-            <div class="current-time">00:00</div>
-            <div class="timeline">
-              <div class="progress-bar"></div>
-            </div>
-            <div class="total-time">00:25</div>
-          </div>
-          <!-- close slider-titmeline -->
-          <div class="volume">
-            <button class="volume-icon"></button>
-            <input
-              class="volume-range"
-              type="range"
-              value="50"
-              min="0"
-              max="100"
-              name="volume"
-            />
-            <progress
-              class="volume-progress"
-              min="0"
-              max="100"
-              value="50"
-            ></progress>
-          </div>
+          <div class="total-time">00:25</div>
         </div>
-        <!-- close progress -->
-        <ul class="play-list"></ul>
-      </div>
-      <!-- close player -->
-      <div class="weather">
-        <input
-          type="text"
-          class="city"
-          placeholder="[Enter your city]"
-          value="Minsk"
-        />
-        <i class="weather-icon owf"></i>
-        <div class="weather-error"></div>
-        <div class="description-container">
-          <span class="temperature"></span>
-          <span class="weather-description"></span>
-        </div>
-        <div class="wind"></div>
-        <div class="humidity"></div>
-      </div>
-      <!-- close weather -->
-    </header>
-    <main class="main">
-      <div class="slider-icons">
-        <button class="slide-prev slider-icon"></button>
-        <button class="slide-next slider-icon"></button>
-      </div>
-      <!-- close slider-icons -->
-      <time class="time"></time>
-      <date class="date"></date>
-      <div class="greeting-container">
-        <span class="greeting"></span>
-        <input type="text" class="name" / placeholder="[Enter your name]">
-      </div>
-      <!-- close greeting-container -->
-    </main>
-    <footer class="footer">
-      <button class="change-quote"></button>
-      <div class="quote-block">
-        <div class="quote"></div>
-        <div class="author"></div>
-      </div>
-      <!-- close quote-block -->
-      <div class="footer-contact">
-        <a class="logo" href="https://rs.school/js-stage0/">
-          <img class="logo-img" src="/src/svg/rs.svg" alt="logo" />
-        </a>
-        <a class="github" href="https://github.com/aliaksei-siniauski">
-          <img class="github-img" src="/src/svg/github.svg" alt="github" />
-        </a>
-        <span class="footer-year">2022</span>
-      </div>
-      <!-- close footer-contact -->
-      <div class="setting">
-        <div class="setting-container">
-          <div class="setting-inner">
-            <div class="user-block">
-              <div class="user-icon"></div>
-              <span class="user-name"></span>
-            </div>
-            <!-- close user block -->
-            <div class="setting-general">
-              <span class="setting-general__title" data-i18="setGeneralSetting"
-                >General Setting</span
-              >
-              <div class="setting-app">
-                <div class="setting-language">
-                  <p data-i18="setLanguage">Language</p>
-                  <select id="language">
-                    <option value="en">English</option>
-                    <option value="by">Беларуская</option>
-                    <option value="ru">Русский</option>
-                  </select>
-                </div>
-                <div class="setting-image-source">
-                  <p data-i18="setImage">Image Source</p>
-                  <select class="image-source-selected">
-                    <option value="Github">Github</option>
-                    <option value="Unsplash">Unsplash API</option>
-                    <option value="Flickr">Flickr API</option>
-                  </select>
-                </div>
-                <!-- close image-source-block -->
-                <div class="image-tag show">
-                  <p class="tag-title" data-i18="setImageTag">Image Tag</p>
-                  <input
-                    type="text"
-                    class="tag-name"
-                    placeholder="Put tag name..."
-                    disabled
-                  />
-                </div>
-              </div>
-              <!-- close setting-app -->
-            </div>
-            <!-- setting-geniral -->
-            <div class="setting-widgets">
-              <span class="setting-widgets__title" data-i18="setWidget"
-                >Widgets</span
-              >
-              <div class="widget-player">
-                <p class="widget-name" data-i18="setAudio">Audio Player</p>
-                <label class="checkbox-button">
-                  <input class="audio-input" type="checkbox" checked />
-                  <span class="checkbox-switch"></span>
-                </label>
-              </div>
-              <!-- close audio-player-block -->
-              <div class="widget-weather">
-                <p class="widget-name" data-i18="setWeather">Weather</p>
-                <label class="checkbox-button">
-                  <input class="weather-input" type="checkbox" checked />
-                  <span class="checkbox-switch"></span>
-                </label>
-              </div>
-              <div class="widget-time">
-                <p class="widget-name" data-i18="setTime">Time</p>
-                <label class="checkbox-button">
-                  <input class="time-input" type="checkbox" checked />
-                  <span class="checkbox-switch"></span>
-                </label>
-              </div>
-              <div class="widget-date">
-                <p class="widget-name" data-i18="setDate">Date</p>
-                <label class="checkbox-button">
-                  <input class="data-input" type="checkbox" checked />
-                  <span class="checkbox-switch"></span>
-                </label>
-              </div>
-              <div class="widget-greeting">
-                <p class="widget-name" data-i18="setGreeting">Greeting</p>
-                <label class="checkbox-button">
-                  <input class="greeting-input" type="checkbox" checked />
-                  <span class="checkbox-switch"></span>
-                </label>
-              </div>
-              <div class="widget-quotes">
-                <p class="widget-name" data-i18="setQuote">Quotes</p>
-                <label class="checkbox-button">
-                  <input class="quote-input" type="checkbox" checked />
-                  <span class="checkbox-switch"></span>
-                </label>
-              </div>
-              <div class="widget-todo">
-                <p class="widget-name" data-i18="setTodo">Todo</p>
-                <label class="checkbox-button">
-                  <input class="todo-input" type="checkbox" checked />
-                  <span class="checkbox-switch"></span>
-                </label>
-              </div>
-            </div>
-            <!-- close setting-widget -->
-          </div>
-          <!-- close setting-inner -->
+        <!-- close slider-titmeline -->
+        <div class="volume">
+          <button class="volume-icon"></button>
+          <input class="volume-range" type="range" value="50" min="0" max="100" name="volume" />
+          <progress class="volume-progress" min="0" max="100" value="50"></progress>
         </div>
       </div>
-      <!-- close setting -->
-      <div class="setting-description">
-        <div class="setting-icon"></div>
-        <p class="setting-title" data-i18="setTitle">Settings</p>
+      <!-- close progress -->
+      <ul class="play-list"></ul>
+    </div>
+    <!-- close player -->
+    <div class="weather">
+      <input type="text" class="city" placeholder="[Enter your city]" value="Minsk" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
       </div>
-      <div class="to-do-list">
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+    <!-- close weather -->
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <!-- close slider-icons -->
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" / placeholder="[Enter your name]">
+    </div>
+    <!-- close greeting-container -->
+  </main>
+  <footer class="footer">
+    <button class="change-quote"></button>
+    <div class="quote-block">
+      <div class="quote"></div>
+      <div class="author"></div>
+    </div>
+    <!-- close quote-block -->
+    <div class="footer-contact">
+      <a class="logo" href="https://rs.school/js-stage0/">
+        <img class="logo-img" src="/src/svg/rs.svg" alt="logo" />
+      </a>
+      <a class="github" href="https://github.com/aliaksei-siniauski">
+        <img class="github-img" src="/src/svg/github.svg" alt="github" />
+      </a>
+      <span class="footer-year">2022</span>
+    </div>
+    <!-- close footer-contact -->
+    <div class="setting">
+      <div class="setting-container">
+        <div class="setting-inner">
+          <div class="user-block">
+            <div class="user-icon"></div>
+            <span class="user-name"></span>
+          </div>
+          <!-- close user block -->
+          <div class="setting-general">
+            <span class="setting-general__title" data-i18="setGeneralSetting">General Setting</span>
+            <div class="setting-app">
+              <div class="setting-language">
+                <p data-i18="setLanguage">Language</p>
+                <select id="language">
+                  <option value="en">English</option>
+                  <option value="by">Беларуская</option>
+                  <option value="ru">Русский</option>
+                </select>
+              </div>
+              <div class="setting-image-source">
+                <p data-i18="setImage">Image Source</p>
+                <select class="image-source-selected">
+                  <option value="Github">Github</option>
+                  <option value="Unsplash">Unsplash API</option>
+                  <option value="Flickr">Flickr API</option>
+                </select>
+              </div>
+              <!-- close image-source-block -->
+              <div class="image-tag show">
+                <p class="tag-title" data-i18="setImageTag">Image Tag</p>
+                <input type="text" class="tag-name" placeholder="Put tag name..." disabled />
+              </div>
+            </div>
+            <!-- close setting-app -->
+          </div>
+          <!-- setting-geniral -->
+          <div class="setting-widgets">
+            <span class="setting-widgets__title" data-i18="setWidget">Widgets</span>
+            <div class="widget-player">
+              <p class="widget-name" data-i18="setAudio">Audio Player</p>
+              <label class="checkbox-button">
+                <input class="audio-input" type="checkbox" checked />
+                <span class="checkbox-switch"></span>
+              </label>
+            </div>
+            <!-- close audio-player-block -->
+            <div class="widget-weather">
+              <p class="widget-name" data-i18="setWeather">Weather</p>
+              <label class="checkbox-button">
+                <input class="weather-input" type="checkbox" checked />
+                <span class="checkbox-switch"></span>
+              </label>
+            </div>
+            <div class="widget-time">
+              <p class="widget-name" data-i18="setTime">Time</p>
+              <label class="checkbox-button">
+                <input class="time-input" type="checkbox" checked />
+                <span class="checkbox-switch"></span>
+              </label>
+            </div>
+            <div class="widget-date">
+              <p class="widget-name" data-i18="setDate">Date</p>
+              <label class="checkbox-button">
+                <input class="data-input" type="checkbox" checked />
+                <span class="checkbox-switch"></span>
+              </label>
+            </div>
+            <div class="widget-greeting">
+              <p class="widget-name" data-i18="setGreeting">Greeting</p>
+              <label class="checkbox-button">
+                <input class="greeting-input" type="checkbox" checked />
+                <span class="checkbox-switch"></span>
+              </label>
+            </div>
+            <div class="widget-quotes">
+              <p class="widget-name" data-i18="setQuote">Quotes</p>
+              <label class="checkbox-button">
+                <input class="quote-input" type="checkbox" checked />
+                <span class="checkbox-switch"></span>
+              </label>
+            </div>
+            <div class="widget-todo">
+              <p class="widget-name" data-i18="setTodo">Todo</p>
+              <label class="checkbox-button">
+                <input class="todo-input" type="checkbox" checked />
+                <span class="checkbox-switch"></span>
+              </label>
+            </div>
+          </div>
+          <!-- close setting-widget -->
+        </div>
+        <!-- close setting-inner -->
+      </div>
+    </div>
+    <!-- close setting -->
+    <div class="setting-description">
+      <div class="setting-icon"></div>
+      <p class="setting-title" data-i18="setTitle">Settings</p>
+    </div>
+    <div class="to-do-list">
+      <div class="to-do-list__container">
         <h2 data-i18="todoList">To Do List</h2>
-        <input type="text" id="myInput" placeholder="" />
+        <input type="text" class="to-do-list__input" placeholder="Add Tasks" />
+        <button class="button to-do-list__button">Add</button>
+        <div class="tasks"></div>
       </div>
-      <!-- to-do-list -->
-    </footer>
-  </body>
-  <script type="module" src="src/index.js"></script>
+    </div>
+    <!-- to-do-list -->
+  </footer>
+</body>
+<script type="module" src="src/index.js"></script>
+
 </html>

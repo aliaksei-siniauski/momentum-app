@@ -1,5 +1,84 @@
 .to-do-list {
   position: absolute;
   right: 10%;
+  top: -180%;
+  left: 50%;
+  width: 10%;
+  min-width: 250px;
+  min-height: 100px;
+  background: hsla(0deg, 0%, 22%, 0.8);
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
   transition: visibility ease-in-out 0.6s;
+}
+
+.to-do-list__container {
+  @extend %flex;
+  @extend %flex-column;
+  @extend %al-items-center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.to-do-list__input {
+  position: relative;
+  width: 90%;
+  height: 35px;
+  padding: 1rem;
+  background: transparent;
+  font-weight: 500;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #111111;
+  border: 2px solid #d1d3d4;
+
+  &:focus {
+    outline: none;
+    border-color: #0d75ec;
+  }
+
+  &::placeholder {}
+}
+
+.to-do-list__button {
+  display: inline-flex;
+  @extend %al-items-center;
+  padding: 1rem 2rem;
+  background: grey;
+  color: $light-color;
+  border: 1px solid cornsilk;
+  border-radius: .2rem;
+  outline: none;
+  cursor: pointer;
+
+  @extend %transition;
+
+  &:hover {
+    background: #0d75ec;
+    color: lightcyan;
+  }
+}
+
+
+#taskname {
+  font-size: 2rem;
+
+}
+
+.tasks {
+  width: 80%;
+}
+
+.task {
+  width: 100%;
+  @extend %flex;
+  @extend %al-items-center;
+  height: 30px;
+  justify-content: space-around;
+  margin-bottom: 8px;
+  background-color: #c5e1e6;
+  border-radius: 5px;
+  border: 1px solid #939697;
+  cursor: pointer;
 }
