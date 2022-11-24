@@ -19,7 +19,7 @@ const addTaskToToDoList = () => {
                     ${toDoListInput.value}
                 </p>
                 <button class="delete">
-                <i class='fas fa-trash-alt' style='font-size:2rem;color:red'></i>
+                <i class='fas fa-trash-alt' style='font-size:2rem;color:red;'></i>
                 </button>
             </div>
         `;
@@ -31,8 +31,8 @@ const addTaskToToDoList = () => {
 const deleteTaskFromToDoList = () => {
     let tasks = document.querySelectorAll(".delete")
     tasks.forEach((task) => {
-        task.addEventListener('click', (e) => {
-            e.target.parentNode.remove();
+        task.addEventListener('click', (event) => {
+            event.currentTarget.parentNode.remove();
         })
     })
 }
