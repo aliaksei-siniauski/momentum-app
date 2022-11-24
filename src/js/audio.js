@@ -62,7 +62,6 @@ const showSongTitle = () => {
 };
 
 const playAudio = () => {
-  audio.currentTime = 0;
   audio.src = playList[playNum].src;
   stylePlayItem(playNum);
   showSongTitle();
@@ -143,15 +142,18 @@ setInterval(() => {
 
 //click volume slider to change volume
 
+
 const volumeIcon = document.querySelector(".volume-icon");
 volumeIcon.addEventListener("click", () => {
-  audio.muted = !audio.muted;
-  if (!audio.muted) {
-    volumeIcon.classList.add("mute");
-  } else {
+  audioBird.muted = !audioBird.muted;
+  if (!audioBird.muted) {
     volumeIcon.classList.remove("mute");
+
+  } else {
+    volumeIcon.classList.add("mute");
   }
 });
+
 
 const volumeRange = document.querySelector(".volume-range");
 volumeRange.addEventListener("input", () => {

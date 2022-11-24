@@ -22,3 +22,4 @@ import {
   selectLanguage,
 } from "./js/translate.js";
 import { selectImageSource, imageTag } from "./js/imageSource.js";
+import { addClickHandlerToTodoButton } from "./js/todo.js";

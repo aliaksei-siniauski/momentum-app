@@ -1,4 +1,6 @@
 export { langEn, langBy, langRu, selectLanguage, lang, language, getTranslate };
+import { setLocalStorage } from "./localStorage.js";
+
 const lang = {
   en: {
     town: "Minsk",
@@ -104,10 +106,13 @@ const lang = {
 
 let language;
 
+console.log(language);
+
 const langEn = document.querySelector(".lang-en");
 const langBy = document.querySelector(".lang-by");
 const langRu = document.querySelector(".lang-ru");
 let selectLanguage = document.getElementById("language");
+
 
 function getTranslate(language) {
   const dataTranslate = document.querySelectorAll("[data-i18]");
@@ -117,9 +122,11 @@ function getTranslate(language) {
   });
 }
 
-selectLanguage.addEventListener("change", () => {
+selectLanguage.addEventListener("change", (event) => {
+  event.preventDefault();
   let selectLanguageOption =
     selectLanguage.options[selectLanguage.selectedIndex];
+
   if (selectLanguageOption.value === "by") {
     getTranslate((language = "by"));
   }
